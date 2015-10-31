@@ -23,7 +23,7 @@
       }
       return count;
   }
-  ...
+  ```
   
   The running time is n*n / 2. Considering that we donot take into account constants, complexity is O(n*n).
   - the first n is because of the for-loop which will be run n times (the length of the array);
@@ -54,7 +54,7 @@
       }
       return count;
   }
-  ...
+  ```
   
   The running time is n*m.Complexity is O(n*m).
   - the n is because of the for-loop on the rows which will be run n times;
@@ -82,7 +82,7 @@
   }
   
   Console.WriteLine(CalcSum(matrix, 0));
-  ...
+  ```
   
   The running time is m.Complexity is O(n*n).
   - this is because in the whole operation the for loop will be executed exactly n times;
