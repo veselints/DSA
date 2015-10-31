@@ -59,3 +59,30 @@
   - the m is because of the for-loop on the cols which will be run m times in the worst case
     (when matrix[row, 0] % 2 is allways 0);
   
+
+3. **(*) What is the expected running time of the following C# code?**
+  - Explain why using Markdown.
+  - Assume the input matrix has size of `n * m`.
+
+  ```cs
+  long CalcSum(int[,] matrix, int row)
+  {
+      long sum = 0;
+      for (int col = 0; col < matrix.GetLength(0); col++)
+      {
+          sum += matrix[row, col];
+      }
+      if (row + 1 < matrix.GetLength(1))
+      {
+          sum += CalcSum(matrix, row + 1);
+      }
+      return sum;
+  }
+  
+  Console.WriteLine(CalcSum(matrix, 0));
+  
+  The running time is m.Complexity is O(n*n).
+  - this is because in the whole operation the for loop will be executed exactly n times;
+  - and the method itself will be called maximum m times;
+  (equal to the number of cols in the matrix);
+  
