@@ -30,4 +30,32 @@
     As the start is increased or the edn is decresed each time we are running the loop, the exact time needed will be n/2.
   
   
+  2. **What is the expected running time of the following C# code?**
+  - Explain why using Markdown.
+  - Assume the input matrix has size of `n * m`.
+
+  ```cs
+  long CalcCount(int[,] matrix)
+  {
+      long count = 0;
+      for (int row=0; row<matrix.GetLength(0); row++)
+      {
+          if (matrix[row, 0] % 2 == 0)
+          {
+              for (int col=0; col<matrix.GetLength(1); col++)
+              {
+                  if (matrix[row,col] > 0)
+                  {
+                      count++;
+                  }
+              }
+          }
+      }
+      return count;
+  }
+  
+  The running time is n*m.Complexity is O(n*m).
+  - the n is because of the for-loop on the rows which will be run n times;
+  - the m is because of the for-loop on the cols which will be run m times in the worst case
+    (when matrix[row, 0] % 2 is allways 0);
   
