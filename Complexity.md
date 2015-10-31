@@ -27,7 +27,7 @@
   The running time is n*n / 2. Considering that we donot take into account constants, complexity is O(n*n).
   - the first n is because of the for-loop which will be run n times (the length of the array);
   - the second n is because the nested while loop which will be executed untill start is smaller than end.
-    As the start is increased or the edn is decresed each time we are running the loop, the exact time needed will be n/2.
+    As the start is increased or the edn is decresed each time we are running the loop, the exact time needed will be n/2;
   
   
   2. **What is the expected running time of the following C# code?**
