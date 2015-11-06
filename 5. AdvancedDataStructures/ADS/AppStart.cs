@@ -1,4 +1,6 @@
-﻿namespace ADS
+﻿using System.Linq;
+
+namespace ADS
 {
     using System;
     using Wintellect.PowerCollections;
@@ -51,8 +53,21 @@
                 Console.WriteLine("{0} has price of -> {1}", product.Name, product.Price);
             }
 
+            // Test counting words
+            string testText = "the ther the ther thir them t a m";
+            string[] words = testText.Split(' ');
+            Trie checkIt = new Trie();
+            for (int i = 0; i < words.Count(); i++)
+            {
+                checkIt.Insert(words[i]);
+            }
 
+            var result = checkIt.CountWords();
 
+            foreach (var pair in result)
+            {
+                Console.WriteLine("The word === {0} === can be found === {1} === times in the text", pair.Key, pair.Value);
+            }
         }
     }
 }
